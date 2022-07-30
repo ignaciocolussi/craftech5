@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to minikube
-      run: ls -lat && cd ./chart/nginx-academy && ls -lat
+      run: ls -lat 
