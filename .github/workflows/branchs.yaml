@@ -27,4 +27,4 @@ jobs:
           file: Dockerfile
           context: .
           push: true
-          tags: ignaciocolussi/nginx-academy:${{ github.refname }}-${{ github.sha }}-${{ github.run_id }}
+          tags: ignaciocolussi/nginx-academy:${{ github.ref_name }}-${{ github.sha }}-${{ github.run_id }}
