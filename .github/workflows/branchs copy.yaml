@@ -1,0 +1,13 @@
+name: "ci"
+
+on:
+  push:
+    branches:
+      - "dev"
+
+jobs:
+  kubernetes-cluster-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to minikube
+      run: cd chart/nginx-academy && ls -lat
