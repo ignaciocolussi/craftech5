@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  nginx-academy:
+    image: "nginx-academy:dev"
+    build:
+      context: ./
+    container_name: nginx-academy
+    volumes:
+      - './www:/usr/share/nginx/html'
+    tty: true
+    ports:
+      - "8080:80"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "10"
+    networks:
+      academy-network:
+
+networks:
+  academy-network:
+    name: academy-network
