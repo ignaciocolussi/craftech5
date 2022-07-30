@@ -35,16 +35,6 @@ jobs:
     if: (github.ref == 'refs/heads/dev')
     name: kubernetes
     steps:
-    - name: start minikube
-      id: minikube
-      uses: medyagh/setup-minikube@master
-    - name: Try the cluster
-      run: kubectl get pods -A
-    - name: Install Helm
-      uses: azure/setup-helm@v3
-      with:
-        version: 'v3.9.0' # default is latest (stable)
-      id: install
-    - name: Deploy to minikube
-      run:
-        helm upgrade --install nginx-academy /chart/nginx-academy --values=deploy/scopes/main.yaml --set image.tag=${{ github.ref_name }}-${{ github.sha }}-${{ github.run_id }} --wait --timeout "3m0s"
+    - name: show dir
+      run: 
+        pwd
